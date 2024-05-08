@@ -19,15 +19,15 @@ let discount = 0;
 
 //condizioni per verificare se il fattore di sconto debba essere diverso da 0
 if (age < 18) {
-    discount = 20;
+    discount = 0.2;
 }
 else if (age > 65) {
-    discount = 40;
+    discount = 0.4;
 }
 
 /* dichiarazione variabile inizializzata con formula di calcolo del prezzo,
 scontato solo se il fattore di sconto è diverso da 0 */
-let discountedPrice = basePrice - ((basePrice * discount) / 100);
+let discountedPrice = basePrice - (basePrice * discount);
 
 //arrotondamento del prezzo finale a 2 cifre decimali
 discountedPrice = discountedPrice.toFixed(2);
