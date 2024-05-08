@@ -4,6 +4,13 @@
 const KM = prompt("Inserisci il numero di chilometri da percorrere");
 const age = prompt("Inserisci età del passeggero");
 
+/* condizione di controllo con alert e chiusura finestra se uno o più input non sono validi 
+  (tipo non numerico, cifre fuori range, nessun input) */
+if (isNaN(KM) || isNaN(age) || KM <= 0 || age <= 0 || age > 199) {
+    alert("ATTENZIONE, UNO O PIÙ INPUT NON SONO VALIDI!");
+    window.close();
+}
+
 //variabile con il prezzo base calcolato in base ai chilometri
 const basePrice = KM * 0.21;
 
