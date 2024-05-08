@@ -8,7 +8,7 @@ const age = prompt("Inserisci età del passeggero");
   (tipo non numerico, cifre fuori range, nessun input) */
 if (isNaN(KM) || isNaN(age) || KM <= 0 || age <= 0 || age > 199) {
     alert("ATTENZIONE, UNO O PIÙ INPUT NON SONO VALIDI!");
-    window.reload();
+    location.reload();
 }
 
 //variabile con il prezzo base calcolato in base ai chilometri
