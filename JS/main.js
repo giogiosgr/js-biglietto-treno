@@ -1,8 +1,8 @@
 'use strict';
 
-//dichiarazione e inizializzazione variabili tramite input 
-const KM = prompt("Inserisci il numero di chilometri da percorrere");
-const age = prompt("Inserisci età del passeggero");
+//dichiarazione e inizializzazione variabili tramite input, convertite in Interi 
+const KM = parseInt(prompt("Inserisci il numero di chilometri da percorrere"));
+const age = parseInt(prompt("Inserisci età del passeggero"));
 
 /* condizione di controllo con alert e ricarica finestra se uno o più input non sono validi 
   (tipo non numerico, cifre fuori range, nessun input) */
@@ -11,8 +11,11 @@ if (isNaN(KM) || isNaN(age) || KM <= 0 || age <= 0 || age > 199) {
     location.reload();
 }
 
+//variabile con il costo unitario al kilometro
+const KMcost = 0.21
+
 //variabile con il prezzo base calcolato in base ai chilometri
-const basePrice = KM * 0.21;
+const basePrice = KM * KMcost;
 
 //dichiarazione della variabile per il fattore di sconto, inizializzata a 0
 let discount = 0;
@@ -29,8 +32,8 @@ else if (age > 65) {
 scontato solo se il fattore di sconto è diverso da 0 */
 let finalPrice = basePrice - (basePrice * discount);
 
-//arrotondamento del prezzo finale a 2 cifre decimali, eliminando gli zeri senza valore
-finalPrice = finalPrice.toFixed(2) * 1;
+//arrotondamento del prezzo finale a 2 cifre decimali
+finalPrice = +finalPrice.toFixed(2);
 
 //dichiarazione variabile inizializzata con l'elemento HTML che conterrà il prezzo
 const priceElement = document.getElementById('price');
