@@ -25,13 +25,13 @@ else if (age > 65) {
     discount = 0.4;
 }
 
-/* dichiarazione variabile inizializzata con formula di calcolo del prezzo,
+/* dichiarazione variabile inizializzata con formula di calcolo del prezzo finale,
 scontato solo se il fattore di sconto è diverso da 0 */
-let discountedPrice = basePrice - (basePrice * discount);
+let finalPrice = basePrice - (basePrice * discount);
 
-//arrotondamento del prezzo finale a 2 cifre decimali
-discountedPrice = discountedPrice.toFixed(2);
+//arrotondamento del prezzo finale a 2 cifre decimali, eliminando gli zeri senza valore
+finalPrice = finalPrice.toFixed(2) * 1;
 
 //dichiarazione variabile inizializzata con l'elemento HTML che conterrà il prezzo
 const priceElement = document.getElementById('price');
-priceElement.innerText = `Il prezzo del biglietto è di ${discountedPrice}€`
+priceElement.innerText = `Il prezzo del biglietto è di ${finalPrice}€`
